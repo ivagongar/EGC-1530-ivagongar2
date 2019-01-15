@@ -8,7 +8,10 @@ before_install:
 install: 
 - pip install -r ../requirements.txt
 script: 
+
 - python manage.py test
+
+
 services:
   - postgresql
 addons:
@@ -16,10 +19,12 @@ addons:
 global:
   - PGPORT=5432
   
+
 branches:
   only:
   - master
   
+
 
 before_script:
  - cp local_settings.travis.py local_settings.py
